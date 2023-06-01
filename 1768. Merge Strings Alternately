@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        int l1=word1.size();
+        int l2=word2.size();
+        string temp;
+        int i=0 , j=0;
+        while(i < l1 && j<l2)
+        {
+              temp += word1[i++];
+              temp += word2[j++];
+        }
+         while (i < l1) {
+            temp += word1[i++];
+        }
+        while (j < l2) {
+            temp += word2[j++];
+        }
+        return temp;
+    }
+};
