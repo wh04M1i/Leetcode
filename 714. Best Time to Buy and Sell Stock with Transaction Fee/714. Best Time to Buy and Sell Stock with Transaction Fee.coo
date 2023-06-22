@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& prices, int fee) {
+        int buy = -prices[0];  // maximum profit by buying and holding a stock
+        int sell = 0;  // maximum profit by selling a stock
+        int n = prices.size();
+
+        for (int i = 1; i < n; i++) {
+            int prev_buy = buy;
+            int prev_sell = sell;
+
+            // Update buy and sell variables
+            buy = max(prev_buy, prev_sell - prices[i]);
+            sell = max(prev_sell, prev_buy + prices[i] - fee);
+        }
+
+        return sell;
+    }
+};
