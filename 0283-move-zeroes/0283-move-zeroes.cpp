@@ -7,10 +7,7 @@ public:
         // Move all non-zero elements to the left
         for (int i = 0; i < n; i++) {
             if (nums[i] != 0) {
-                if (i != nonZeroIndex) {  // Avoid unnecessary assignments
-                    nums[nonZeroIndex] = nums[i];
-                }
-                nonZeroIndex++;
+                nums[nonZeroIndex++] = nums[i];
             }
         }
 
