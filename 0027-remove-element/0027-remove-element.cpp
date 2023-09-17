@@ -12,9 +12,10 @@ public:
                 {
                     nums[j]=nums[j+1];
                 }
-                i--;
+               // i--;
                 s--;
             }
+            else
             i++;
         }
       return s;
